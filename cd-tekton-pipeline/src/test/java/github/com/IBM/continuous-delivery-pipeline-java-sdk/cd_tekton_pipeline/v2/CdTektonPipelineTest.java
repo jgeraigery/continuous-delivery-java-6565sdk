@@ -146,15 +146,15 @@ public class CdTektonPipelineTest extends PowerMockTestCase {
   @Test
   public void testGetServiceUrlForRegion() throws Throwable {
     assertNull(CdTektonPipeline.getServiceUrlForRegion("INVALID_REGION"));
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("us-south"), "https://devops-api.us-south.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("us-east"), "https://devops-api.us-east.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-de"), "https://devops-api.eu-de.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-gb"), "https://devops-api.eu-gb.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-osa"), "https://devops-api.jp-osa.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-tok"), "https://devops-api.jp-tok.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("au-syd"), "https://devops-api.au-syd.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("ca-tor"), "https://devops-api.ca-tor.devops.cloud.ibm.com/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("br-sao"), "https://devops-api.br-sao.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("us-south"), "https://api.us-south.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("us-east"), "https://api.us-east.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-de"), "https://api.eu-de.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-gb"), "https://api.eu-gb.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-osa"), "https://api.jp-osa.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-tok"), "https://api.jp-tok.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("au-syd"), "https://api.au-syd.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("ca-tor"), "https://api.ca-tor.devops.cloud.ibm.com/v2");
+    assertEquals(CdTektonPipeline.getServiceUrlForRegion("br-sao"), "https://api.br-sao.devops.cloud.ibm.com/v2");
   }
 
   // Test the createTektonPipeline operation with a valid options model parameter

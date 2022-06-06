@@ -89,20 +89,20 @@ public class CdTektonPipeline extends BaseService {
 
   public static final String DEFAULT_SERVICE_NAME = "cd_tekton_pipeline";
 
-  public static final String DEFAULT_SERVICE_URL = "https://devops-api.us-south.devops.cloud.ibm.com/v2";
+  public static final String DEFAULT_SERVICE_URL = "https://api.us-south.devops.cloud.ibm.com/v2";
 
   private static final Map<String, String> _regionalEndpoints;
   static {
     Map<String, String> m = new HashMap<>();
-    m.put("us-south", "https://devops-api.us-south.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the us-south region.
-    m.put("us-east", "https://devops-api.us-east.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the us-east region.
-    m.put("eu-de", "https://devops-api.eu-de.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the eu-de region.
-    m.put("eu-gb", "https://devops-api.eu-gb.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the eu-gb region.
-    m.put("jp-osa", "https://devops-api.jp-osa.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the jp-osa region.
-    m.put("jp-tok", "https://devops-api.jp-tok.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the jp-tok region.
-    m.put("au-syd", "https://devops-api.au-syd.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the au-syd region.
-    m.put("ca-tor", "https://devops-api.ca-tor.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the ca-tor region.
-    m.put("br-sao", "https://devops-api.br-sao.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the br-sao region.
+    m.put("us-south", "https://api.us-south.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the us-south region.
+    m.put("us-east", "https://api.us-east.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the us-east region.
+    m.put("eu-de", "https://api.eu-de.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the eu-de region.
+    m.put("eu-gb", "https://api.eu-gb.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the eu-gb region.
+    m.put("jp-osa", "https://api.jp-osa.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the jp-osa region.
+    m.put("jp-tok", "https://api.jp-tok.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the jp-tok region.
+    m.put("au-syd", "https://api.au-syd.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the au-syd region.
+    m.put("ca-tor", "https://api.ca-tor.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the ca-tor region.
+    m.put("br-sao", "https://api.br-sao.devops.cloud.ibm.com/v2"); // The host URL for Tekton Pipeline Service in the br-sao region.
     _regionalEndpoints = Collections.unmodifiableMap(m);
   }
 
