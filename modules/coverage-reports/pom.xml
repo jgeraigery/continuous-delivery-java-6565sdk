@@ -14,7 +14,7 @@
     <artifactId>continuous-delivery-coverage-reports</artifactId>
 
     <!-- >>> Replace this with the coverage-report module's description -->
-    <name>My Services Coverage Reports</name>
+    <name>Continuous Delivery Coverage Reports</name>
 
     <properties>
 	<!-- There is no need to publish this module's artifacts on maven central -->
