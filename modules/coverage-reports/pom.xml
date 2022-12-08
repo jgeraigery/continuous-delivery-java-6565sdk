@@ -14,7 +14,7 @@
     <artifactId>continuous-delivery-coverage-reports</artifactId>
 
     <!-- >>> Replace this with the coverage-report module's description -->
-    <name>Continuous Delivery Coverage Reports</name>
+    <name>My Services Coverage Reports</name>
 
     <properties>
 	<!-- There is no need to publish this module's artifacts on maven central -->
@@ -38,12 +38,17 @@
         </dependency>
 
         <!-- Copy and update this section for each service added to the project. -->
-<!--        <dependency>
+        <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>example-service</artifactId>
+            <artifactId>cd-toolchain</artifactId>
             <version>${project.version}</version>
         </dependency>
--->    </dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cd-tekton-pipeline</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+</dependencies>
 
     <build>
         <plugins>
