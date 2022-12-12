@@ -11,6 +11,7 @@
  * specific language governing permissions and limitations under the License.
  */
 
+// >>> Replace "my_services" with the correct value for your project (e.g. "platform_services")
 package com.ibm.cloud.continuous_delivery.test;
 
 import static org.testng.Assert.assertFalse;
@@ -21,7 +22,8 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
-import com.ibm.cloud.continuous_delivery.common.SdkCommon;
+// >>> Replace "my_services" with the correct value for your project (e.g. "platform_services")
+import com.ibm.cloud.my_services.common.SdkCommon;
 
 /**
  * This class contains tests for the SdkCommon class.

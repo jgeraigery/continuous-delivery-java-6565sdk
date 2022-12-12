@@ -11,6 +11,7 @@
  * specific language governing permissions and limitations under the License.
  */
 
+// >>> Replace "my_services" with the correct value for your project
 package com.ibm.cloud.continuous_delivery.common;
 
 import java.io.InputStream;
@@ -35,6 +36,7 @@ public class SdkCommon {
     private static String projectName;
     private static String version;
 
+    // >>> Replace "my-services" with the parent project's artifactId (e.g. platform-services)
     private static String parentArtifactId = "continuous-delivery";
 
     static {
@@ -44,10 +46,18 @@ public class SdkCommon {
     private SdkCommon() {
     }
 
+    /**
+     * Returns the SDK project's version.
+     * @return a string containing the version (e.g. "1.2.3")
+     */
     public static String getVersion() {
         return version;
     }
 
+    /**
+     * Returns the SDK project's name.
+     * @return a string containing the name (e.g. "platform-services-java-sdk")
+     */
     public static String getProjectName() {
         return projectName;
     }
