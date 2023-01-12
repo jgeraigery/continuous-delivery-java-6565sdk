@@ -23,7 +23,7 @@ import java.util.Map;
 import org.testng.annotations.Test;
 
 // >>> Replace "my_services" with the correct value for your project (e.g. "platform_services")
-import com.ibm.cloud.my_services.common.SdkCommon;
+import com.ibm.cloud.continuous_delivery.common.SdkCommon;
 
 /**
  * This class contains tests for the SdkCommon class.
