@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.1.2...0.1.3) (2023-01-18)
+
+
+### Bug Fixes
+
+* **tekton:** Tekton pipeline java update ([69a4831](https://github.com/IBM/continuous-delivery-java-sdk/commit/69a48310961fe90e6090d6e106cc49f0a6ac154a))
+
 ## [0.1.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/v0.1.1...0.1.2) (2023-01-16)
 
 
