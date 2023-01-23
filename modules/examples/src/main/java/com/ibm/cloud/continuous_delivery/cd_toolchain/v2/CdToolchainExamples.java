@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2022.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import org.slf4j.LoggerFactory;
  * CD_TOOLCHAIN_URL=&lt;service base url&gt;
  * CD_TOOLCHAIN_AUTH_TYPE=iam
  * CD_TOOLCHAIN_APIKEY=&lt;IAM apikey&gt;
+ * CD_TOOLCHAIN_AUTH_URL=&lt;IAM token service base URL - omit this if using the production environment&gt;
  *
  * These configuration properties can be exported as environment variables, or stored
  * in a configuration file and then:
