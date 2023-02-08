@@ -13,10 +13,6 @@
     <packaging>jar</packaging>
     <name>Code Examples</name>
 
-    <properties>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-    </properties>
-
     <dependencies>
         <!-- There should be a dependency for each module whose request example class exists in this "examples" module. Add 
             new "dependency" entries here as needed when you add a request examples class for a new service. Note: the "artifactId" values 
@@ -30,10 +26,6 @@
             <groupId>com.ibm.cloud</groupId>
             <artifactId>cd-tekton-pipeline</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
