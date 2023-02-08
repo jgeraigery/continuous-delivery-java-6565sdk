@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.1.3...0.2.0) (2023-02-08)
+
+
+### Features
+
+* **build:** deploy artifacts to maven central ([#13](https://github.com/IBM/continuous-delivery-java-sdk/issues/13)) ([d1a9442](https://github.com/IBM/continuous-delivery-java-sdk/commit/d1a9442719f810c7ed7b6d1bfa9421de2a86626a))
+
 ## [0.1.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.1.2...0.1.3) (2023-01-18)
 
 
