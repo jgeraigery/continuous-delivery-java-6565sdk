@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.2.0...0.2.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* **examples:** produce javadoc for examples ([d9130eb](https://github.com/IBM/continuous-delivery-java-sdk/commit/d9130eb8226b54dddc6a23481f0e493e67a998b8))
+
 # [0.2.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.1.3...0.2.0) (2023-02-08)
 
 
