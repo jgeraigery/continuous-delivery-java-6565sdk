@@ -1,6 +1,6 @@
 ---
 language: java
-group: bionic
+dist: bionic
 
 jdk:
 - openjdk11
@@ -24,9 +24,9 @@ stages:
   - name: Build-Test
   - name: Semantic-Release
     if: (branch = main) AND (type IN (push, api)) AND (fork = false)
-# Uncomment these stages when you're ready to use them.
-#  - name: Publish-Release
-#    if: (tag IS present) AND (fork = false)
+
+  - name: Publish-Release
+    if: (tag IS present) AND (fork = false)
 
 before_install:
   - sudo apt-get update
@@ -56,23 +56,23 @@ jobs:
       script:
         - npm run semantic-release
 
-#    - stage: Publish-Release
-#      jdk: openjdk11
-#      name: Publish-Javadoc
-#      install: true
-#      script:
-#        - build/setMavenVersion.sh
-#        - mvn clean javadoc:aggregate $MVN_ARGS
-#        - build/publishJavadoc.sh
-#      after_success:
-#        - echo "Javadocs successfully published to gh-pages!"
-#
-#    - jdk: openjdk11
-#      name: Publish-To-Maven-Central
-#      install: true
-#      script:
-#        - build/setupSigning.sh
-#        - build/setMavenVersion.sh
-#        - mvn deploy $MVN_ARGS -DskipTests -P central
-#      after_success:
-#        - echo "Maven artifacts successfully published to Maven Central!"
+    - stage: Publish-Release
+      jdk: openjdk11
+      name: Publish-Javadoc
+      install: true
+      script:
+        - build/setMavenVersion.sh
+        - mvn clean javadoc:aggregate $MVN_ARGS
+        - build/publishJavadoc.sh
+      after_success:
+        - echo "Javadocs successfully published to gh-pages!"
+
+    - jdk: openjdk11
+      name: Publish-To-Maven-Central
+      install: true
+      script:
+        - build/setupSigning.sh
+        - build/setMavenVersion.sh
+        - mvn deploy $MVN_ARGS -DskipTests -P central
+      after_success:
+        - echo "Maven artifacts successfully published to Maven Central!"
