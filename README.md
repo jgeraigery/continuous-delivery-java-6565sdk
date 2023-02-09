@@ -24,7 +24,7 @@ Changes might occur which impact applications that use this SDK.
 
 <!-- toc -->
 
-- [IBM Cloud Continuous Delivery Java SDK Version 0.2.1](#ibm-cloud-continuous-delivery-java-sdk-version-010)
+- [IBM Cloud Continuous Delivery Java SDK Version 0.2.1](#ibm-cloud-continuous-delivery-java-sdk-version-021)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Prerequisites](#prerequisites)
@@ -82,12 +82,18 @@ Here are examples for maven and gradle:
     <artifactId>cd-toolchain</artifactId>
     <version>0.2.1</version>
 </dependency>
+<dependency>
+    <groupId>com.ibm.cloud</groupId>
+    <artifactId>cd-tekton-pipeline</artifactId>
+    <version>0.2.1</version>
+</dependency>
 ```
 
 ### Gradle
 
 ```gradle
 compile 'com.ibm.cloud:cd-toolchain:0.2.1'
+compile 'com.ibm.cloud:cd-tekton-pipeline:0.2.1'
 ```
 
 ## Using the SDK
