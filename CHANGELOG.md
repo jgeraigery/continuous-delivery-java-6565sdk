@@ -1,3 +1,17 @@
+# [1.0.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.2.1...1.0.0) (2023-02-21)
+
+
+### Features
+
+* **build:** trigger major version build ([a039f09](https://github.com/IBM/continuous-delivery-java-sdk/commit/a039f0906b01be646c8b88b12865ac804c524d30))
+
+
+### BREAKING CHANGES
+
+* **build:** release v1.0.0
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
 ## [0.2.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.2.0...0.2.1) (2023-02-08)
 
 
