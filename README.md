@@ -1,4 +1,4 @@
-# IBM Cloud Continuous Delivery Java SDK Version 0.2.1
+# IBM Cloud Continuous Delivery Java SDK Version 0.2.1 
 
 [![Build Status](https://app.travis-ci.com/IBM/continuous-delivery-java-sdk.svg?branch=main)](https://app.travis-ci.com/IBM/continuous-delivery-java-sdk)
 [![Release](https://img.shields.io/github/v/release/IBM/continuous-delivery-java-sdk)](https://github.com/IBM/continuous-delivery-java-sdk/releases/latest)
