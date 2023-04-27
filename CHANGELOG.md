@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.0.0...1.1.0) (2023-04-27)
+
+
+### Features
+
+* **tekton:** add next build number support ([348a8df](https://github.com/IBM/continuous-delivery-java-sdk/commit/348a8dfa501760eeee121868a2d326510c3848b8))
+
 # [1.0.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/0.2.1...1.0.0) (2023-02-21)
 
 
