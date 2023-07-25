@@ -1,6 +1,6 @@
 ---
 language: java
-dist: focal
+dist: jammy
 
 jdk:
 - openjdk11
@@ -47,10 +47,11 @@ jobs:
       script:
         - mvn verify -fae -DskipITs $MVN_ARGS
 
-# Uncomment these stages when you're ready to use them.
     - stage: Semantic-Release
       install:
-        - nvm install 14
+        - nvm install 18
+        - node --version
+        - npm --version
         - npm install
         - pip install --user bump2version
       script:
