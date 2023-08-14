@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.0...1.1.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* **tekton:** add favorite trigger support ([713cd5f](https://github.com/IBM/continuous-delivery-java-sdk/commit/713cd5fe87d95c9f8420765ce8eae008691fc902))
+
 # [1.1.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.0.0...1.1.0) (2023-04-27)
 
 
