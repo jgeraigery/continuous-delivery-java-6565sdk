@@ -22,6 +22,7 @@ public class ListToolchainsOptions extends GenericModel {
   protected String resourceGroupId;
   protected Long limit;
   protected String start;
+  protected String name;
 
   /**
    * Builder.
@@ -30,6 +31,7 @@ public class ListToolchainsOptions extends GenericModel {
     private String resourceGroupId;
     private Long limit;
     private String start;
+    private String name;
 
     /**
      * Instantiates a new Builder from an existing ListToolchainsOptions instance.
@@ -40,6 +42,7 @@ public class ListToolchainsOptions extends GenericModel {
       this.resourceGroupId = listToolchainsOptions.resourceGroupId;
       this.limit = listToolchainsOptions.limit;
       this.start = listToolchainsOptions.start;
+      this.name = listToolchainsOptions.name;
     }
 
     /**
@@ -98,6 +101,17 @@ public class ListToolchainsOptions extends GenericModel {
       this.start = start;
       return this;
     }
+
+    /**
+     * Set the name.
+     *
+     * @param name the name
+     * @return the ListToolchainsOptions builder
+     */
+    public Builder name(String name) {
+      this.name = name;
+      return this;
+    }
   }
 
   protected ListToolchainsOptions() { }
@@ -108,6 +122,7 @@ public class ListToolchainsOptions extends GenericModel {
     resourceGroupId = builder.resourceGroupId;
     limit = builder.limit;
     start = builder.start;
+    name = builder.name;
   }
 
   /**
@@ -150,6 +165,17 @@ public class ListToolchainsOptions extends GenericModel {
    */
   public String start() {
     return start;
+  }
+
+  /**
+   * Gets the name.
+   *
+   * Name of toolchain to look up.
+   *
+   * @return the name
+   */
+  public String name() {
+    return name;
   }
 }
 

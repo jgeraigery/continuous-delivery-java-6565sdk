@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.64.0-959a5845-20230112-195144
+ * IBM OpenAPI SDK Code Generator Version: 3.77.0-42417df0-20230811-192318
  */
 
 package com.ibm.cloud.continuous_delivery.cd_toolchain.v2;
@@ -163,6 +163,9 @@ public class CdToolchain extends BaseService {
     }
     if (listToolchainsOptions.start() != null) {
       builder.query("start", String.valueOf(listToolchainsOptions.start()));
+    }
+    if (listToolchainsOptions.name() != null) {
+      builder.query("name", String.valueOf(listToolchainsOptions.name()));
     }
     ResponseConverter<ToolchainCollection> responseConverter =
       ResponseConverterUtils.getValue(new com.google.gson.reflect.TypeToken<ToolchainCollection>() { }.getType());
