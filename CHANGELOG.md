@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.1...1.1.2) (2023-09-19)
+
+
+### Bug Fixes
+
+* bump java core ([#30](https://github.com/IBM/continuous-delivery-java-sdk/issues/30)) ([5888a78](https://github.com/IBM/continuous-delivery-java-sdk/commit/5888a78870a85f28f3df65c5328bc099c5047137))
+
 ## [1.1.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.0...1.1.1) (2023-08-14)
 
 
