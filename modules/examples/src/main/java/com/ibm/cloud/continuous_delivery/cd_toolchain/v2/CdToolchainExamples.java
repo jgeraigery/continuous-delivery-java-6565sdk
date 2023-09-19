@@ -52,7 +52,6 @@ import org.slf4j.LoggerFactory;
  * CD_TOOLCHAIN_URL=&lt;service base url&gt;
  * CD_TOOLCHAIN_AUTH_TYPE=iam
  * CD_TOOLCHAIN_APIKEY=&lt;IAM apikey&gt;
- * CD_TOOLCHAIN_AUTH_URL=&lt;IAM token service base URL - omit this if using the production environment&gt;
  *
  * These configuration properties can be exported as environment variables, or stored
  * in a configuration file and then:
@@ -128,6 +127,7 @@ public class CdToolchainExamples {
       ListToolchainsOptions listToolchainsOptions = new ListToolchainsOptions.Builder()
         .resourceGroupId("testString")
         .limit(Long.valueOf("10"))
+        .name("TestToolchainV2")
         .build();
 
       ToolchainsPager pager = new ToolchainsPager(cdToolchainService, listToolchainsOptions);

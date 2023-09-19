@@ -164,6 +164,7 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
         .resourceGroupId("testString")
         .limit(Long.valueOf("10"))
         .start("testString")
+        .name("TestToolchainV2")
         .build();
 
       // Invoke operation
@@ -187,6 +188,7 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
       ListToolchainsOptions options = new ListToolchainsOptions.Builder()
         .resourceGroupId("testString")
         .limit(Long.valueOf("10"))
+        .name("TestToolchainV2")
         .build();
 
       // Test getNext().

@@ -33,11 +33,11 @@ public class ListToolsOptionsTest {
   public void testListToolsOptions() throws Throwable {
     ListToolsOptions listToolsOptionsModel = new ListToolsOptions.Builder()
       .toolchainId("testString")
-      .limit(Long.valueOf("1"))
+      .limit(Long.valueOf("20"))
       .start("testString")
       .build();
     assertEquals(listToolsOptionsModel.toolchainId(), "testString");
-    assertEquals(listToolsOptionsModel.limit(), Long.valueOf("1"));
+    assertEquals(listToolsOptionsModel.limit(), Long.valueOf("20"));
     assertEquals(listToolsOptionsModel.start(), "testString");
   }
 

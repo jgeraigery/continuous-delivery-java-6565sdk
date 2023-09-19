@@ -33,12 +33,14 @@ public class ListToolchainsOptionsTest {
   public void testListToolchainsOptions() throws Throwable {
     ListToolchainsOptions listToolchainsOptionsModel = new ListToolchainsOptions.Builder()
       .resourceGroupId("testString")
-      .limit(Long.valueOf("1"))
+      .limit(Long.valueOf("20"))
       .start("testString")
+      .name("TestToolchainV2")
       .build();
     assertEquals(listToolchainsOptionsModel.resourceGroupId(), "testString");
-    assertEquals(listToolchainsOptionsModel.limit(), Long.valueOf("1"));
+    assertEquals(listToolchainsOptionsModel.limit(), Long.valueOf("20"));
     assertEquals(listToolchainsOptionsModel.start(), "testString");
+    assertEquals(listToolchainsOptionsModel.name(), "TestToolchainV2");
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

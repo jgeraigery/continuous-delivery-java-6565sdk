@@ -115,6 +115,7 @@ public class CdToolchainTest {
       .resourceGroupId("testString")
       .limit(Long.valueOf("10"))
       .start("testString")
+      .name("TestToolchainV2")
       .build();
 
     // Invoke listToolchains() with a valid options model and verify the result
@@ -136,6 +137,7 @@ public class CdToolchainTest {
     assertEquals(query.get("resource_group_id"), "testString");
     assertEquals(Long.valueOf(query.get("limit")), Long.valueOf("10"));
     assertEquals(query.get("start"), "testString");
+    assertEquals(query.get("name"), "TestToolchainV2");
   }
 
   // Test the listToolchains operation with and without retries enabled
@@ -177,6 +179,7 @@ public class CdToolchainTest {
     ListToolchainsOptions listToolchainsOptions = new ListToolchainsOptions.Builder()
       .resourceGroupId("testString")
       .limit(Long.valueOf("10"))
+      .name("TestToolchainV2")
       .build();
 
     List<ToolchainModel> allResults = new ArrayList<>();
@@ -211,6 +214,7 @@ public class CdToolchainTest {
     ListToolchainsOptions listToolchainsOptions = new ListToolchainsOptions.Builder()
       .resourceGroupId("testString")
       .limit(Long.valueOf("10"))
+      .name("TestToolchainV2")
       .build();
 
     ToolchainsPager pager = new ToolchainsPager(cdToolchainService, listToolchainsOptions);
