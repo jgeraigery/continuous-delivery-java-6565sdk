@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.2...1.1.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* **tekton:** add error message to PipelineRun ([5e7327e](https://github.com/IBM/continuous-delivery-java-sdk/commit/5e7327ec063112189d5332d215ffda2b6bc0bbe6))
+
 ## [1.1.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.1...1.1.2) (2023-09-19)
 
 
