@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.3...1.2.0) (2023-11-10)
+
+
+### Features
+
+* support eu-es region ([#35](https://github.com/IBM/continuous-delivery-java-sdk/issues/35)) ([6309660](https://github.com/IBM/continuous-delivery-java-sdk/commit/63096606be079b2b1e9595d5d32d143a801c7919)), closes [#33](https://github.com/IBM/continuous-delivery-java-sdk/issues/33)
+
 ## [1.1.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.1.2...1.1.3) (2023-10-27)
 
 
