@@ -97,13 +97,14 @@ public class CdToolchainTest {
     assertEquals(CdToolchain.getServiceUrlForRegion("au-syd"), "https://api.au-syd.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("ca-tor"), "https://api.ca-tor.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("br-sao"), "https://api.br-sao.devops.cloud.ibm.com/toolchain/v2");
+    assertEquals(CdToolchain.getServiceUrlForRegion("eu-es"), "https://api.eu-es.devops.cloud.ibm.com/toolchain/v2");
   }
 
   // Test the listToolchains operation with a valid options model parameter
   @Test
   public void testListToolchainsWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"total_count\": 10, \"limit\": 5, \"first\": {\"href\": \"href\"}, \"previous\": {\"start\": \"start\", \"href\": \"href\"}, \"next\": {\"start\": \"start\", \"href\": \"href\"}, \"last\": {\"start\": \"start\", \"href\": \"href\"}, \"toolchains\": [{\"id\": \"id\", \"name\": \"name\", \"description\": \"description\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}]}";
+    String mockResponseBody = "{\"total_count\": 10, \"limit\": 5, \"first\": {\"href\": \"href\"}, \"previous\": {\"start\": \"start\", \"href\": \"href\"}, \"next\": {\"start\": \"start\", \"href\": \"href\"}, \"last\": {\"start\": \"start\", \"href\": \"href\"}, \"toolchains\": [{\"id\": \"id\", \"name\": \"TestToolchainV2\", \"description\": \"A sample toolchain to test the API\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"6a9a01f2cff54a7f966f803d92877123\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}]}";
     String listToolchainsPath = "/toolchains";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -112,7 +113,7 @@ public class CdToolchainTest {
 
     // Construct an instance of the ListToolchainsOptions model
     ListToolchainsOptions listToolchainsOptionsModel = new ListToolchainsOptions.Builder()
-      .resourceGroupId("testString")
+      .resourceGroupId("6a9a01f2cff54a7f966f803d92877123")
       .limit(Long.valueOf("10"))
       .start("testString")
       .name("TestToolchainV2")
@@ -134,7 +135,7 @@ public class CdToolchainTest {
     // Verify query params
     Map<String, String> query = TestUtilities.parseQueryString(request);
     assertNotNull(query);
-    assertEquals(query.get("resource_group_id"), "testString");
+    assertEquals(query.get("resource_group_id"), "6a9a01f2cff54a7f966f803d92877123");
     assertEquals(Long.valueOf(query.get("limit")), Long.valueOf("10"));
     assertEquals(query.get("start"), "testString");
     assertEquals(query.get("name"), "TestToolchainV2");
@@ -161,8 +162,8 @@ public class CdToolchainTest {
   @Test
   public void testListToolchainsWithPagerGetNext() throws Throwable {
     // Set up the two-page mock response.
-    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"name\",\"description\":\"description\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
-    String mockResponsePage2 = "{\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"name\",\"description\":\"description\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
+    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"TestToolchainV2\",\"description\":\"A sample toolchain to test the API\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"6a9a01f2cff54a7f966f803d92877123\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
+    String mockResponsePage2 = "{\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"TestToolchainV2\",\"description\":\"A sample toolchain to test the API\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"6a9a01f2cff54a7f966f803d92877123\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
       .setResponseCode(200)
@@ -177,7 +178,7 @@ public class CdToolchainTest {
       .setBody("{\"message\": \"No more results available!\"}"));
 
     ListToolchainsOptions listToolchainsOptions = new ListToolchainsOptions.Builder()
-      .resourceGroupId("testString")
+      .resourceGroupId("6a9a01f2cff54a7f966f803d92877123")
       .limit(Long.valueOf("10"))
       .name("TestToolchainV2")
       .build();
@@ -196,8 +197,8 @@ public class CdToolchainTest {
   @Test
   public void testListToolchainsWithPagerGetAll() throws Throwable {
     // Set up the two-page mock response.
-    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"name\",\"description\":\"description\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
-    String mockResponsePage2 = "{\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"name\",\"description\":\"description\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
+    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"TestToolchainV2\",\"description\":\"A sample toolchain to test the API\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"6a9a01f2cff54a7f966f803d92877123\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
+    String mockResponsePage2 = "{\"total_count\":2,\"toolchains\":[{\"id\":\"id\",\"name\":\"TestToolchainV2\",\"description\":\"A sample toolchain to test the API\",\"account_id\":\"accountId\",\"location\":\"location\",\"resource_group_id\":\"6a9a01f2cff54a7f966f803d92877123\",\"crn\":\"crn\",\"href\":\"href\",\"ui_href\":\"uiHref\",\"created_at\":\"2019-01-01T12:00:00.000Z\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"created_by\":\"createdBy\"}],\"limit\":1}";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
       .setResponseCode(200)
@@ -212,7 +213,7 @@ public class CdToolchainTest {
       .setBody("{\"message\": \"No more results available!\"}"));
 
     ListToolchainsOptions listToolchainsOptions = new ListToolchainsOptions.Builder()
-      .resourceGroupId("testString")
+      .resourceGroupId("6a9a01f2cff54a7f966f803d92877123")
       .limit(Long.valueOf("10"))
       .name("TestToolchainV2")
       .build();
@@ -227,7 +228,7 @@ public class CdToolchainTest {
   @Test
   public void testCreateToolchainWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"name\": \"name\", \"description\": \"description\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"name\": \"TestToolchainV2\", \"description\": \"A sample toolchain to test the API\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"6a9a01f2cff54a7f966f803d92877123\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
     String createToolchainPath = "/toolchains";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -280,7 +281,7 @@ public class CdToolchainTest {
   @Test
   public void testGetToolchainByIdWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"name\": \"name\", \"description\": \"description\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"name\": \"TestToolchainV2\", \"description\": \"A sample toolchain to test the API\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"6a9a01f2cff54a7f966f803d92877123\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
     String getToolchainByIdPath = "/toolchains/testString";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -381,7 +382,7 @@ public class CdToolchainTest {
   @Test
   public void testUpdateToolchainWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"name\": \"name\", \"description\": \"description\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"name\": \"TestToolchainV2\", \"description\": \"A sample toolchain to test the API\", \"account_id\": \"accountId\", \"location\": \"location\", \"resource_group_id\": \"6a9a01f2cff54a7f966f803d92877123\", \"crn\": \"crn\", \"href\": \"href\", \"ui_href\": \"uiHref\", \"created_at\": \"2019-01-01T12:00:00.000Z\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"created_by\": \"createdBy\"}";
     String updateToolchainPath = "/toolchains/testString";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -440,7 +441,7 @@ public class CdToolchainTest {
   @Test
   public void testListToolsWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"limit\": 5, \"total_count\": 10, \"first\": {\"href\": \"href\"}, \"previous\": {\"start\": \"start\", \"href\": \"href\"}, \"next\": {\"start\": \"start\", \"href\": \"href\"}, \"last\": {\"start\": \"start\", \"href\": \"href\"}, \"tools\": [{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"name\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}]}";
+    String mockResponseBody = "{\"limit\": 5, \"total_count\": 10, \"first\": {\"href\": \"href\"}, \"previous\": {\"start\": \"start\", \"href\": \"href\"}, \"next\": {\"start\": \"start\", \"href\": \"href\"}, \"last\": {\"start\": \"start\", \"href\": \"href\"}, \"tools\": [{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"MyTool\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}]}";
     String listToolsPath = "/toolchains/testString/tools";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -495,8 +496,8 @@ public class CdToolchainTest {
   @Test
   public void testListToolsWithPagerGetNext() throws Throwable {
     // Set up the two-page mock response.
-    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"name\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
-    String mockResponsePage2 = "{\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"name\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
+    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"MyTool\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
+    String mockResponsePage2 = "{\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"MyTool\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
       .setResponseCode(200)
@@ -529,8 +530,8 @@ public class CdToolchainTest {
   @Test
   public void testListToolsWithPagerGetAll() throws Throwable {
     // Set up the two-page mock response.
-    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"name\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
-    String mockResponsePage2 = "{\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"name\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
+    String mockResponsePage1 = "{\"next\":{\"start\":\"1\"},\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"MyTool\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
+    String mockResponsePage2 = "{\"total_count\":2,\"limit\":1,\"tools\":[{\"id\":\"id\",\"resource_group_id\":\"resourceGroupId\",\"crn\":\"crn\",\"tool_type_id\":\"toolTypeId\",\"toolchain_id\":\"toolchainId\",\"toolchain_crn\":\"toolchainCrn\",\"href\":\"href\",\"referent\":{\"ui_href\":\"uiHref\",\"api_href\":\"apiHref\"},\"name\":\"MyTool\",\"updated_at\":\"2019-01-01T12:00:00.000Z\",\"parameters\":{\"anyKey\":\"anyValue\"},\"state\":\"configured\"}]}";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
       .setResponseCode(200)
@@ -559,7 +560,7 @@ public class CdToolchainTest {
   @Test
   public void testCreateToolWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"name\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"MyTool\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
     String createToolPath = "/toolchains/testString/tools";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -613,7 +614,7 @@ public class CdToolchainTest {
   @Test
   public void testGetToolByIdWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"name\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"MyTool\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
     String getToolByIdPath = "/toolchains/testString/tools/testString";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")
@@ -716,7 +717,7 @@ public class CdToolchainTest {
   @Test
   public void testUpdateToolWOptions() throws Throwable {
     // Register a mock response
-    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"name\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
+    String mockResponseBody = "{\"id\": \"id\", \"resource_group_id\": \"resourceGroupId\", \"crn\": \"crn\", \"tool_type_id\": \"toolTypeId\", \"toolchain_id\": \"toolchainId\", \"toolchain_crn\": \"toolchainCrn\", \"href\": \"href\", \"referent\": {\"ui_href\": \"uiHref\", \"api_href\": \"apiHref\"}, \"name\": \"MyTool\", \"updated_at\": \"2019-01-01T12:00:00.000Z\", \"parameters\": {\"anyKey\": \"anyValue\"}, \"state\": \"configured\"}";
     String updateToolPath = "/toolchains/testString/tools/testString";
     server.enqueue(new MockResponse()
       .setHeader("Content-type", "application/json")

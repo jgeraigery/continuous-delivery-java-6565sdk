@@ -32,12 +32,12 @@ public class ListToolchainsOptionsTest {
   @Test
   public void testListToolchainsOptions() throws Throwable {
     ListToolchainsOptions listToolchainsOptionsModel = new ListToolchainsOptions.Builder()
-      .resourceGroupId("testString")
+      .resourceGroupId("6a9a01f2cff54a7f966f803d92877123")
       .limit(Long.valueOf("20"))
       .start("testString")
       .name("TestToolchainV2")
       .build();
-    assertEquals(listToolchainsOptionsModel.resourceGroupId(), "testString");
+    assertEquals(listToolchainsOptionsModel.resourceGroupId(), "6a9a01f2cff54a7f966f803d92877123");
     assertEquals(listToolchainsOptionsModel.limit(), Long.valueOf("20"));
     assertEquals(listToolchainsOptionsModel.start(), "testString");
     assertEquals(listToolchainsOptionsModel.name(), "TestToolchainV2");

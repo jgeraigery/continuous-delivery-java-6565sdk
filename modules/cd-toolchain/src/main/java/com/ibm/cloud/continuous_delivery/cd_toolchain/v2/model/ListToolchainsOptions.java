@@ -170,7 +170,7 @@ public class ListToolchainsOptions extends GenericModel {
   /**
    * Gets the name.
    *
-   * Name of toolchain to look up.
+   * Exact name of toolchain to look up. This parameter is case sensitive.
    *
    * @return the name
    */

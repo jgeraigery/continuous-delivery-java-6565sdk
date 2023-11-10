@@ -91,6 +91,8 @@ public class CdToolchain extends BaseService {
     m.put("ca-tor", "https://api.ca-tor.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the ca-tor region
 
     m.put("br-sao", "https://api.br-sao.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the br-sao region
+
+    m.put("eu-es", "https://api.eu-es.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the eu-es region
     _regionalEndpoints = Collections.unmodifiableMap(m);
   }
 

@@ -68,7 +68,7 @@ public class ToolchainPatch extends GenericModel {
   /**
    * Gets the description.
    *
-   * Toolchain description.
+   * Describes the toolchain.
    *
    * @return the description
    */

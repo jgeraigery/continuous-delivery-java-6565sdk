@@ -151,7 +151,7 @@ public class ToolchainToolPatch extends GenericModel {
   /**
    * Gets the name.
    *
-   * Tool name.
+   * Name of the tool.
    *
    * @return the name
    */
